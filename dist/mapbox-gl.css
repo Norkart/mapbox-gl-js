@@ -103,6 +103,14 @@
     margin-left: 2px;
 }
 
+.mapboxgl-ctrl-layer label {
+    display: block;
+}
+
+.mapboxgl-ctrl-layer {
+    padding: 5px;
+}
+
 .mapboxgl-popup {
     position: absolute;
     display: -webkit-flex;
