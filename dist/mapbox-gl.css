@@ -84,6 +84,7 @@
 }
 .mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-out:before { content: '\e600'; }
 .mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in:before  { content: '\e601'; }
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-tilt:before  { content: 'T'; }
 
 .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
     padding: 0 5px;
