@@ -26,6 +26,14 @@
     cursor: grabbing;
 }
 
+.mapboxgl-ctrl-layer label {
+    display: block;
+}
+
+.mapboxgl-ctrl-layer {
+    padding: 5px;
+}
+
 .mapboxgl-ctrl-top-left,
 .mapboxgl-ctrl-top-right,
 .mapboxgl-ctrl-bottom-left,
