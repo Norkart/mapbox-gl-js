@@ -20,7 +20,8 @@ function Navigation(options) {
 
 Navigation.prototype = util.inherit(Control, {
     options: {
-        position: 'top-right'
+        position: 'top-right',
+        tilts: [0, 30, 45, 60] //TODO: check that this contains pitches in the allowable range (and find out what that is..)
     },
 
     onAdd: function(map) {
@@ -28,6 +29,7 @@ Navigation.prototype = util.inherit(Control, {
 
         var container = this._container = DOM.create('div', className + '-group', map.getContainer());
 
+        this._tilt = this._createButton(className + '-icon ' + className + '-tilt', this._tilt.bind(this));
         this._zoomInButton = this._createButton(className + '-icon ' + className + '-zoom-in', map.zoomIn.bind(map));
         this._zoomOutButton = this._createButton(className + '-icon ' + className + '-zoom-out', map.zoomOut.bind(map));
         this._compass = this._createButton(className + '-compass', map.resetNorth.bind(map));
@@ -122,5 +124,12 @@ Navigation.prototype = util.inherit(Control, {
         ctx.moveTo(0, -width);
         ctx.lineTo(0, width);
         ctx.stroke();
-    }
+    },
+
+    _tilt: function (e) {
+        var current = this._map.getPitch(),
+            nextIdx = this.options.tilts.indexOf(current) + 1,
+            newPitch = nextIdx < this.options.tilts.length ? this.options.tilts[nextIdx] : this.options.tilts[0];
+        this._map.setPitch(newPitch);
+    },
 });

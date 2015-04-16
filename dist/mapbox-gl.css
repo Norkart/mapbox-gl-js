@@ -82,6 +82,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/*TODO: add proper icon here*/
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-tilt:before  { content: 'T'; }
 .mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-out:before { content: '\e600'; }
 .mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in:before  { content: '\e601'; }
 
